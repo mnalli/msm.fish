@@ -1,22 +1,20 @@
-# `msm`: a minimal snippet manager (`fish` bindings)
+# `msm`: a minimal snippet manager for `fish`
 
-Read [here](../README.md) for a general explanation of `msm`.
+Fish-native implementation of [`msm`](https://github.com/mnalli/msm.fish/blob/main/README.md).
 
 ## Installation
 
-To install `msm`, you can simply copy [`conf.d/msm.fish`](conf.d/msm.fish) under
+To install it, you can simply copy [`conf.d/msm.fish`](conf.d/msm.fish) under
 your fish installation `conf.d` directory.
 
 ```fish
-curl -L https://raw.githubusercontent.com/mnalli/msm/refs/heads/main/fish/conf.d/msm.fish > $__fish_config_dir/conf.d/msm.fish
+curl -L https://raw.githubusercontent.com/mnalli/msm.fish/refs/heads/main/conf.d/msm.fish > $__fish_config_dir/conf.d/msm.fish
 ```
 
 ### Using [Fisher](https://github.com/jorgebucaran/fisher)
 
-Installation with Fisher:
-
 ```fish
-fisher install mnalli/msm
+fisher install mnalli/msm.fish
 ```
 
 ### Using nemo
