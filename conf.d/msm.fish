@@ -13,8 +13,7 @@ set -l _msm_help 'Usage: msm subcommand [string]
     msm save "<snippet>"       Save snippet
     msm validate               Validate snippet store structure
     msm validate "<snippet>"   Validate snippet
-    msm search                 Interactively search for snippets
-    msm search "<query>"       Interactively search with pre-loaded query'
+    msm search                 Interactively search for snippets'
 
 function msm -a subcommand -a snippet -d 'msm command line interface'
     switch $subcommand
@@ -98,14 +97,12 @@ $snippet"
     printf "%s\n\n" "$snippet" >> "$MSM_STORE"
 end
 
-# Search snippets using fzf. Query is optional.
-function _msm_search -a query -d 'Search snippets (query is optional)'
+function _msm_search -d 'Search snippets'
     $MSM_PREVIEW "$MSM_STORE" | _msm_split_snippet_store |
         fzf --read0 \
             --ansi \
             --tac \
             --prompt="Snippets> " \
-            --query="$query" \
             --delimiter="\n" \
             --with-nth=2..,1 \
             --preview="echo {} | $MSM_PREVIEW" \
