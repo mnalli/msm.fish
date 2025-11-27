@@ -17,49 +17,27 @@ curl -L https://raw.githubusercontent.com/mnalli/msm.fish/refs/heads/main/conf.d
 fisher install mnalli/msm.fish
 ```
 
-### Using nemo
-
-...
-
 ## Configuration
 
-In your `config.fish`, you can add configuration variables and bindings:
+In your `config.fish`, you can add configuration variables and bindings for
+interactive functions:
 
 ```fish
 set -g MSM_PREVIEW batcat --decorations=never --color=always -l fish
 set -g MSM_STORE $__fish_user_data_dir/snippets.fish
-```
 
-Define key bindings for interactive functions:
-
-```fish
 bind \ea msm_capture
 bind \ez msm_search_interactive
 ```
 
 ## Usage
 
-With `fish`, you can add a newline in the command line with `Alt-Enter` by default.
+View usage tutorial [here](https://github.com/mnalli/msm?tab=readme-ov-file#usage).
 
-Examples
+Note: in `fish`, you can add a newline in the command line with `Alt-Enter` by default.
 
-```fish
-git rebase -i
-```
+## Clear screen from errors
 
-```fish
-# interactive rebase
-git rebase -i
-```
-
-```fish
-# multiline snippet example
-echo this is a
-echo multiline snippet
-```
-
-## Error display
-
-If a snippet validation error occurs during capture, the stderr output will
-pollute what is displayed on the command line. To clear the screen while
-maintaining the current command line content, you can use `CTRL-l` (`clear-screen`).
+If a snippet validation error occurs during capture, stderr will pollute the
+command line. To clear the screen while maintaining the current command line
+content, you can use `CTRL-l` (`clear-screen`).
