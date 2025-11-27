@@ -129,7 +129,7 @@ function msm_search_interactive
     set -l output (_msm_search "$current")
 
     if test -n "$output"
-        # Replace current commandline with the selected snippet text
-        commandline -r -- "$output"
+        # insert snippet
+        commandline --insert "$output"
     end
 end
